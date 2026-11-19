@@ -2,8 +2,8 @@ name: Update filtered TVBox config
 
 on:
   schedule:
-    # Refresh every 6 hours. GitHub may delay scheduled runs during busy periods.
-    - cron: "0 */6 * * *"
+    # Refresh once a day at 00:00 UTC.
+    - cron: "0 0 * * *"
   workflow_dispatch:
   push:
     branches: [main]

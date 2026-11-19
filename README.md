@@ -4,7 +4,7 @@
 
 This repository fetches the 饭太硬 TVBox configuration, removes netdisk
 (网盘 / 云盘) sources, and publishes the cleaned JSON. GitHub Actions refreshes
-it every 6 hours, so there is no manual download, cleanup, or re-upload step.
+it once a day, so there is no manual download, cleanup, or re-upload step.
 
 ## Use it in TVBox
 
