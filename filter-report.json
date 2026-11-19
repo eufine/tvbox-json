@@ -1,0 +1,71 @@
+{
+  "total_sites": 49,
+  "kept_sites": 39,
+  "removed_sites": [
+    {
+      "key": "MDrive",
+      "name": "🗂我的云盘┃配置",
+      "api": "csp_MyDriveGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "玩偶",
+      "name": "👽玩偶哥哥┃4K弹幕",
+      "api": "csp_WoGGGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "seed",
+      "name": "💡聚剧┃四盘",
+      "api": "csp_SeedhubGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "ZPan",
+      "name": "🎈盘搜┃四盘",
+      "api": "csp_S_zpsGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "JPan",
+      "name": "🦋易搜┃四盘",
+      "api": "csp_S_zpsGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "YpanSo",
+      "name": "🐌盘她┃夸父",
+      "api": "csp_YpanSoGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "BpanSo",
+      "name": "🐞盘他┃嘟嘟",
+      "api": "csp_BpanSoGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "抠搜",
+      "name": "🌶️抠抠┃搜搜",
+      "api": "csp_KkSsGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "UC",
+      "name": "🌈优汐┃搜搜",
+      "api": "csp_UuSsGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "push_agent",
+      "name": "🛴手机┃推送",
+      "api": "csp_PushGuard",
+      "reason": "explicit key"
+    }
+  ],
+  "total_lives": 5,
+  "kept_lives": 5,
+  "removed_lives": [],
+  "source_url": "http://www.xn--sss604efuw.cc/tv",
+  "format": "image+base64"
+}

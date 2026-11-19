@@ -1,0 +1,64 @@
+{
+  "source_urls": [
+    "http://www.xn--sss604efuw.cc/tv",
+    "https://www.xn--sss604efuw.cc/tv",
+    "https://cdn09022024.gitlink.org.cn/api/v1/repos/xxooo/in/raw/in.bmp"
+  ],
+  "explicit_keys": [
+    "MDrive",
+    "玩偶",
+    "seed",
+    "ZPan",
+    "JPan",
+    "YpanSo",
+    "BpanSo",
+    "抠搜",
+    "UC",
+    "push_agent"
+  ],
+  "name_keywords": [
+    "网盘",
+    "云盘",
+    "盘搜",
+    "盘她",
+    "盘他",
+    "四盘",
+    "夸克",
+    "阿里云盘",
+    "百度网盘",
+    "天翼云盘",
+    "115网盘",
+    "迅雷云盘",
+    "pikpak",
+    "小雅",
+    "alist",
+    "openlist",
+    "clouddrive"
+  ],
+  "api_patterns": [
+    "MyDrive",
+    "CloudDrive",
+    "Quark",
+    "Aliyun",
+    "AliPan",
+    "UCDrive",
+    "BaiduPan",
+    "Tianyi",
+    "Xunlei",
+    "PikPak",
+    "Alist",
+    "Openlist",
+    "Ypan",
+    "Bpan",
+    "S_zps",
+    "KkSs",
+    "UuSs",
+    "Seedhub",
+    "PushGuard"
+  ],
+  "keep_sites": [
+    "立播"
+  ],
+  "strip_cloud_drive_from_kept": true,
+  "filter_lives": true
+}
