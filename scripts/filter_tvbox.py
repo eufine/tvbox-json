@@ -44,7 +44,17 @@ DEFAULT_FILTER_CONFIG: dict[str, Any] = {
         "抠搜",
         "UC",
         "push_agent",
+        "Aid",
+        "Bili",
+        "Biliych",
+        "dr_兔小贝",
+        "少儿教育",
+        "小学课堂",
+        "初中课堂",
+        "高中教育",
     ],
+    # Site keys moved to just after the first site, in this order.
+    "priority_keys": ["文采", "奶酪"],
     # Substrings in a site/live name that identify netdisk content.
     "name_keywords": [
         "网盘",
@@ -427,6 +437,27 @@ def apply_filter(config: dict[str, Any], filter_config: dict[str, Any]) -> tuple
             strip_cloud_drive_from_site(site)
         kept_sites.append(site)
 
+    moved_sites: list[dict[str, Any]] = []
+    priority_keys = filter_config.get("priority_keys", [])
+    if priority_keys and kept_sites:
+        first_site = kept_sites[0]
+        remaining_sites = kept_sites[1:]
+        prioritized_sites: list[dict[str, Any]] = []
+        for priority_key in priority_keys:
+            for index, site in enumerate(remaining_sites):
+                if isinstance(site, dict) and str(site.get("key", "")) == priority_key:
+                    prioritized_sites.append(remaining_sites.pop(index))
+                    break
+        kept_sites = [first_site] + prioritized_sites + remaining_sites
+        moved_sites = [
+            {
+                "key": site.get("key"),
+                "name": site.get("name"),
+                "position": index + 2,
+            }
+            for index, site in enumerate(prioritized_sites)
+        ]
+
     removed_lives: list[dict[str, Any]] = []
     kept_lives = config.get("lives")
     if filter_config.get("filter_lives") and isinstance(kept_lives, list):
@@ -452,6 +483,7 @@ def apply_filter(config: dict[str, Any], filter_config: dict[str, Any]) -> tuple
         "total_sites": len(sites),
         "kept_sites": len(kept_sites),
         "removed_sites": removed_sites,
+        "moved_sites": moved_sites,
         "total_lives": len(kept_lives) if isinstance(kept_lives, list) else 0,
         "kept_lives": len(result.get("lives", [])) if isinstance(result.get("lives"), list) else 0,
         "removed_lives": removed_lives,
@@ -511,6 +543,8 @@ def main() -> int:
     )
     for item in report["removed_sites"]:
         log(f"  - {item['key']} | {item['name']} | {item['reason']}")
+    for item in report.get("moved_sites", []):
+        log(f"  -> moved {item['key']} to position {item['position']}")
     for item in report["removed_lives"]:
         log(f"  - live: {item['name']} | {item['reason']}")
     log(f"Wrote {args.output}")

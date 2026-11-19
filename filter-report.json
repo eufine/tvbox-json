@@ -1,6 +1,6 @@
 {
   "total_sites": 49,
-  "kept_sites": 39,
+  "kept_sites": 31,
   "removed_sites": [
     {
       "key": "MDrive",
@@ -18,6 +18,12 @@
       "key": "seed",
       "name": "💡聚剧┃四盘",
       "api": "csp_SeedhubGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "Aid",
+      "name": "🚑急救┃教学",
+      "api": "csp_FirstAidGuard",
       "reason": "explicit key"
     },
     {
@@ -57,10 +63,64 @@
       "reason": "explicit key"
     },
     {
+      "key": "Bili",
+      "name": "🅱哔哔合集┃弹幕",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "Biliych",
+      "name": "🅱哔哔演唱会┃弹幕",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "dr_兔小贝",
+      "name": "📚儿童┃启蒙",
+      "api": "https://ghproxy.net/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/drpy2.min.js",
+      "reason": "explicit key"
+    },
+    {
+      "key": "少儿教育",
+      "name": "📚少儿┃教育",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "小学课堂",
+      "name": "📚小学┃课堂",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "初中课堂",
+      "name": "📚初中┃课堂",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "高中教育",
+      "name": "📚高中┃课堂",
+      "api": "csp_BiliGuard",
+      "reason": "explicit key"
+    },
+    {
       "key": "push_agent",
       "name": "🛴手机┃推送",
       "api": "csp_PushGuard",
       "reason": "explicit key"
+    }
+  ],
+  "moved_sites": [
+    {
+      "key": "文采",
+      "name": "💮文采┃秒播",
+      "position": 2
+    },
+    {
+      "key": "奶酪",
+      "name": "🧀奶酪┃秒播",
+      "position": 3
     }
   ],
   "total_lives": 5,

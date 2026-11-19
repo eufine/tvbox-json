@@ -32,10 +32,13 @@ Use the **raw** URL, not the GitHub HTML page URL.
 
 ## What gets removed
 
-The filter removes sources that are netdisk-based, including:
+The filter removes netdisk-based sources plus an explicit list of unused
+sources, including:
 
-- explicit site keys such as `MDrive`, `玩偶`, `seed`, `ZPan`, `JPan`,
-  `YpanSo`, `BpanSo`, `抠搜`, `UC`, `push_agent`
+- netdisk keys such as `MDrive`, `玩偶`, `seed`, `ZPan`, `JPan`, `YpanSo`,
+  `BpanSo`, `抠搜`, `UC`, `push_agent`
+- unused keys such as `Aid`, `Bili`, `Biliych`, `dr_兔小贝`, `少儿教育`,
+  `小学课堂`, `初中课堂`, `高中教育`
 - site names containing `网盘`, `云盘`, `盘搜`, `盘她`, `盘他`, `四盘`,
   `夸克`, `阿里云盘`, etc.
 - spider/API names such as `*Quark*`, `*AliPan*`, `*UCDrive*`, `*PikPak*`,
@@ -54,11 +57,15 @@ Edit [`config/filter.json`](config/filter.json):
 | --- | --- |
 | `source_urls` | Upstream config URLs, tried in order. |
 | `explicit_keys` | Exact `sites[].key` values to remove. |
+| `priority_keys` | Keys moved to just after the first site, in this order. |
 | `name_keywords` | Substrings matched against site/live names. |
 | `api_patterns` | Regexes matched against `sites[].api`. |
 | `keep_sites` | Sites that should stay even if they use `Cloud-drive`. |
 | `strip_cloud_drive_from_kept` | Remove the `Cloud-drive` key from kept sites. |
 | `filter_lives` | Also apply name keywords to the `lives` array. |
+
+`priority_keys` currently moves `文采` and `奶酪` to positions 2 and 3,
+immediately after the first site (`点我切源`), so they appear first in search.
 
 After editing, push to `main`; the workflow runs automatically and commits the
 new `tvbox.json` and `filter-report.json`.
@@ -72,7 +79,7 @@ appended to that image. `scripts/filter_tvbox.py`:
 1. requests the endpoint with an OkHttp User-Agent;
 2. detects plain JSON, image + Base64 JSON, or plain Base64;
 3. tolerates `//` comments and trailing commas used by TVBox configs;
-4. filters `sites` (and optionally `lives`);
+4. filters `sites` (and optionally `lives`) and applies priority ordering;
 5. writes valid, pretty-printed `tvbox.json`.
 
 If the upstream is temporarily unreachable or changes format, the workflow job
