@@ -1,0 +1,27 @@
+# Site keys to exclude from tvbox.json.
+#
+# One key per line. Blank lines and lines starting with # are ignored.
+# Add a key here, commit/push it, and the workflow will regenerate the config.
+# Use the exact value of "key" from the upstream sites array.
+
+# Netdisk sources
+MDrive
+玩偶
+seed
+ZPan
+JPan
+YpanSo
+BpanSo
+抠搜
+UC
+push_agent
+
+# Unused sources
+Aid
+Bili
+Biliych
+dr_兔小贝
+少儿教育
+小学课堂
+初中课堂
+高中教育

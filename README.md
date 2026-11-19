@@ -49,6 +49,24 @@ sources, including:
 the removal reason. Everything else (live TV, regular VOD sites, parsers,
 rules, hosts) is preserved.
 
+The explicit key list is in [`config/exclude.txt`](config/exclude.txt), so it is
+easy to add or remove keys without editing the filter JSON.
+
+### Excluding more sources
+
+Edit [`config/exclude.txt`](config/exclude.txt) and add one site key per line.
+Blank lines and lines starting with `#` are ignored. This file is the
+authoritative explicit-exclusion list, so you can add or remove keys without
+touching the Python code or the JSON settings.
+
+Example:
+
+```text
+# Remove these sources
+SomeSiteKey
+AnotherSiteKey
+```
+
 ### Customizing
 
 Edit [`config/filter.json`](config/filter.json):
@@ -56,7 +74,6 @@ Edit [`config/filter.json`](config/filter.json):
 | Key | Meaning |
 | --- | --- |
 | `source_urls` | Upstream config URLs, tried in order. |
-| `explicit_keys` | Exact `sites[].key` values to remove. |
 | `priority_keys` | Keys moved to just after the first site, in this order. |
 | `name_keywords` | Substrings matched against site/live names. |
 | `api_patterns` | Regexes matched against `sites[].api`. |

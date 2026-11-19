@@ -32,7 +32,7 @@ DEFAULT_FILTER_CONFIG: dict[str, Any] = {
         "http://www.xn--sss604efuw.cc/tv",
         "https://cdn09022024.gitlink.org.cn/api/v1/repos/xxooo/in/raw/in.bmp",
     ],
-    # Exact site keys that are known to be netdisk-based.
+    # Fallback explicit keys, used only when config/exclude.txt is missing.
     "explicit_keys": [
         "MDrive",
         "玩偶",
@@ -348,6 +348,17 @@ def load_filter_config(path: str | None) -> dict[str, Any]:
     return config
 
 
+def load_exclude_keys(path: Path) -> list[str]:
+    """Read one site key per line, ignoring blank lines and # comments."""
+    keys: list[str] = []
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        key = line.strip()
+        if not key or key.startswith("#"):
+            continue
+        keys.append(key)
+    return keys
+
+
 def matches_keyword(value: str, keywords: list[str]) -> str | None:
     folded = value.casefold()
     for keyword in keywords:
@@ -501,6 +512,7 @@ def write_json(path: Path, value: Any) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="config/filter.json", help="filter rules JSON (optional)")
+    parser.add_argument("--exclude", default="config/exclude.txt", help="text file with one site key per line to exclude")
     parser.add_argument("--output", default="tvbox.json", help="output config path")
     parser.add_argument("--report", default="filter-report.json", help="removal report path")
     parser.add_argument("--input", help="read a saved response instead of fetching the network")
@@ -513,6 +525,14 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     filter_config = load_filter_config(args.config)
+
+    exclude_path = Path(args.exclude)
+    if exclude_path.exists():
+        exclude_keys = load_exclude_keys(exclude_path)
+        filter_config["explicit_keys"] = exclude_keys
+        log(f"Loaded {len(exclude_keys)} exclusion key(s) from {exclude_path}")
+    else:
+        log(f"WARNING: {exclude_path} not found; using the built-in exclusion list")
 
     if args.input:
         payload = Path(args.input).read_bytes()
@@ -539,7 +559,7 @@ def main() -> int:
 
     log(
         f"Kept {report['kept_sites']}/{report['total_sites']} sites, "
-        f"removed {len(report['removed_sites'])} netdisk source(s)."
+        f"removed {len(report['removed_sites'])} source(s)."
     )
     for item in report["removed_sites"]:
         log(f"  - {item['key']} | {item['name']} | {item['reason']}")
