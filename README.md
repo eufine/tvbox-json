@@ -1,5 +1,7 @@
 # TVBox config without netdisk sources
 
+[![Update filtered TVBox config](https://github.com/eufine/tvbox-json/actions/workflows/update.yml/badge.svg)](https://github.com/eufine/tvbox-json/actions/workflows/update.yml)
+
 This repository fetches the 饭太硬 TVBox configuration, removes netdisk
 (网盘 / 云盘) sources, and publishes the cleaned JSON. GitHub Actions refreshes
 it every 6 hours, so there is no manual download, cleanup, or re-upload step.
@@ -108,5 +110,8 @@ The repository contains a `.nojekyll` file, so Pages serves the JSON directly.
 - The upstream configuration is maintained by a third party. Its address or
   encoding can change without notice; update `config/filter.json` if that
   happens.
+- GitHub automatically disables scheduled workflows after 60 days without
+  repository activity. If the config has not changed for a long time, open the
+  **Actions** tab and re-enable the workflow (or run it manually).
 - This project only filters the source list. It does not host, proxy, or
   endorse the upstream content.
