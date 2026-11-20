@@ -73,20 +73,6 @@
       "changeable": 0
     },
     {
-      "key": "爱刷",
-      "name": "♻️爱刷┃短视",
-      "type": 3,
-      "api": "csp_SsspGuard",
-      "searchable": 0,
-      "quickSearch": 0,
-      "changeable": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.597
-      },
-      "ext": {}
-    },
-    {
       "key": "粤迷",
       "name": "🦊粤迷┃港剧",
       "type": 3,
@@ -235,21 +221,6 @@
       "quickSearch": 1,
       "changeable": 0,
       "ext": "https://www.xb6v.com/"
-    },
-    {
-      "key": "AiDj",
-      "name": "❤️AI剧┃弹幕",
-      "type": 3,
-      "api": "csp_AiDjGuard",
-      "ext": {
-        "type": "video",
-        "name": "短剧",
-        "danMu": false
-      },
-      "indexs": 0,
-      "quickSearch": 1,
-      "searchable": 1,
-      "changeable": 0
     },
     {
       "key": "Dm84",

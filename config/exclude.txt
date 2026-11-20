@@ -18,9 +18,13 @@ push_agent
 
 # Unused sources
 Aid
+AiDj
 Bili
 Biliych
 dr_兔小贝
+海绵
+剧迷
+爱刷
 少儿教育
 小学课堂
 初中课堂
