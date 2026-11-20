@@ -1,6 +1,6 @@
 {
   "total_sites": 49,
-  "kept_sites": 31,
+  "kept_sites": 27,
   "removed_sites": [
     {
       "key": "MDrive",
@@ -15,9 +15,33 @@
       "reason": "explicit key"
     },
     {
+      "key": "爱刷",
+      "name": "♻️爱刷┃短视",
+      "api": "csp_SsspGuard",
+      "reason": "explicit key"
+    },
+    {
       "key": "seed",
       "name": "💡聚剧┃四盘",
       "api": "csp_SeedhubGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "海绵",
+      "name": "🐬海绵┃不卡",
+      "api": "csp_HmysGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "剧迷",
+      "name": "🍊橘猫┃多线",
+      "api": "csp_JumiTvGuard",
+      "reason": "explicit key"
+    },
+    {
+      "key": "AiDj",
+      "name": "❤️AI剧┃弹幕",
+      "api": "csp_AiDjGuard",
       "reason": "explicit key"
     },
     {

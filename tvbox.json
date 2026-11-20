@@ -137,32 +137,11 @@
       "changeable": 1
     },
     {
-      "key": "海绵",
-      "name": "🐬海绵┃不卡",
-      "type": 3,
-      "api": "csp_HmysGuard",
-      "timeout": 10,
-      "playerType": "2",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1
-    },
-    {
       "key": "糯米",
       "name": "🍓糯米┃秒播",
       "type": 3,
       "api": "csp_NmyswvGuard",
       "timeout": 15,
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1
-    },
-    {
-      "key": "剧迷",
-      "name": "🍊橘猫┃多线",
-      "type": 3,
-      "api": "csp_JumiTvGuard",
-      "timeout": 10,
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 1
