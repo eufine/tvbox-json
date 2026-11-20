@@ -54,7 +54,7 @@ DEFAULT_FILTER_CONFIG: dict[str, Any] = {
         "高中教育",
     ],
     # Site keys moved to just after the first site, in this order.
-    "priority_keys": ["文采", "奶酪"],
+    "priority_keys": ["文采", "奶酪", "瓜子", "比特", "糯米"],
     # Substrings in a site/live name that identify netdisk content.
     "name_keywords": [
         "网盘",
