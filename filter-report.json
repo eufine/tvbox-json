@@ -1,6 +1,6 @@
 {
-  "total_sites": 49,
-  "kept_sites": 27,
+  "total_sites": 50,
+  "kept_sites": 29,
   "removed_sites": [
     {
       "key": "MDrive",
@@ -24,12 +24,6 @@
       "key": "seed",
       "name": "💡聚剧┃四盘",
       "api": "csp_SeedhubGuard",
-      "reason": "explicit key"
-    },
-    {
-      "key": "海绵",
-      "name": "🐬海绵┃不卡",
-      "api": "csp_HmysGuard",
       "reason": "explicit key"
     },
     {
